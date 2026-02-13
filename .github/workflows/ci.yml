@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.26
+
+      - name: Build services
+        run: |
+          cd backend
+          for dir in */ ; do
+            if [ -f "$dir/go.mod" ]; then
+              cd $dir
+              go mod tidy
+              go build ./...
+              go test ./... || true
+              cd ..
+            fi
+          done

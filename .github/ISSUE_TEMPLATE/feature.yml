@@ -1,0 +1,12 @@
+name: Feature
+description: New feature
+title: "[FEATURE] "
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      description: What needs to be implemented?
+  - type: textarea
+    attributes:
+      label: Acceptance Criteria
+      description: Checklist of completion
