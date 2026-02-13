@@ -29,4 +29,4 @@ Examples:
 6. CI must pass
 7. Merge to main
 
-Direct pushes to main are запрещены.
+Direct pushes to main are prohibited.
